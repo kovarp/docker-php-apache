@@ -1,8 +1,7 @@
-FROM php:8.2-apache
+FROM php:8.1-apache
 
 RUN docker-php-ext-install pdo_mysql \
 && docker-php-ext-install mysqli \
-&& docker-php-ext-install ftp \
 && a2enmod rewrite
 
 COPY .docker/php-apache/php.ini /usr/local/etc/php/
